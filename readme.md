@@ -13,9 +13,9 @@ However, nothing like it really existed, so other people caught wind of what he 
 
 Thus, PHP evolved organically. And as a result, it's kind of a mess.
 
-PHP is very procedural. It doesn't really have objects.* Instead of giving you an Array object that has methods attached to it, it just gives you 53 functions with "array" in the name. There are 9500 total built-in functions, all in the global namespace. - http://php.net/manual/en/function.array.php
+PHP is very procedural. It doesn't really have objects*. Instead of giving you an Array object that has methods attached to it, it just gives you 53 functions with "array" in the name. There are 9500 total built-in functions, all in the global namespace. - http://php.net/manual/en/function.array.php
 
-> *It does have objects now, actually. But instead of doing something like `artist.name` it's `$artist->name`, which is much less enjoyable to write.
+> It does have objects now, actually. But instead of doing something like `artist.name` it's `$artist->name`, which is much less enjoyable to write.
 
 ### At the same time...
 
@@ -25,26 +25,7 @@ There are several reasons to like PHP:
 
 2. It's *everywhere*. It had a massive head start.
 
-3. It's easy to embed in HTML. PHP works just like `.html.erb` or `.hbs` files, and you don't need to do anything fancy for that to work. For example:
-
-    ```PHP
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Hello</title>
-      </head>
-      <body>
-
-      <?php
-        $adjectives = array("attractive", "terrible", "sad", "lugubrious");
-        $randomIndex= array_rand($adjectives, 1);
-        $adjective = $adjectives[$randomIndex];
-      ?>
-        <h1><?php echo("My, you're looking $adjective today!"); ?></h1>
-
-      </body>
-    </html>
-    ```
+3. It's easy to embed in HTML. PHP works just like `.html.erb` or `.hbs` files, and you don't need to do anything fancy for that to work.
 
 4. It makes a lot of back-end concepts easy to understand. Look at the `$_SERVER` variables:
 
@@ -69,6 +50,8 @@ Now we can easily see all of the information we're getting from the server, as w
 ...for rapid prototyping. When I want to quickly make a script that involves reading/writing files, PHP is my go-to.
 
 For example, my [PHP Computer Navigator](https://github.com/RobertAKARobin/PHP-Computer-Navigator) is extremely useful to me. I use it to navigate around all my various repos and code projects.
+
+![#](commitstrip.jpg)
 
 ## Install PHP
 
@@ -123,6 +106,27 @@ Then, go to `localhost/hello.php`.
 - There's no `var`. Instead, variables all begin with `$`. So instead of `var artist = ` you have `$artist =`.
 - PHP has classes. Instead of referencing a property or method with `.` (`artist.name`) you use `->` (`$artist->name`).
 - Every PHP snippet begins with `<?php` and ends with `?>`.
+
+## Try this:
+
+```PHP
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello</title>
+  </head>
+  <body>
+
+  <?php
+    $adjectives = array("attractive", "terrible", "sad", "lugubrious");
+    $randomIndex= array_rand($adjectives, 1);
+    $adjective = $adjectives[$randomIndex];
+  ?>
+    <h1><?php echo("My, you're looking $adjective today!"); ?></h1>
+
+  </body>
+</html>
+```
 
 # [FizzBuzz in PHP](https://github.com/ga-wdi-exercises/php-fizzbuzz)
 

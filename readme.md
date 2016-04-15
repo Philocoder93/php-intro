@@ -81,8 +81,11 @@ Give the `htdocs` folder the proper permissions:
 
 ```
 $ cd /Applications/XAMPP/xamppfiles
-$ chmod -R 777 htdocs
+$ sudo chmod -R 777 htdocs
+$ cd htdocs
 ```
+
+> Note: Don't go running `chmod` any old place. It's fine on `htdocs`, but I wouldn't do it elsewhere unless you know what you're doing.
 
 Now, create a new file called `hello.php`. Inside, write this:
 

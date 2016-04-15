@@ -69,18 +69,20 @@ Open it, and make sure Apache is running:
 
 ## Your first PHP file
 
-XAMPP stores everything in:
+Go to this directory:
 
 ```
-/Applications/XAMPP/xamppfiles/htdocs
+$ cd /Applications/XAMPP/xamppfiles/htdocs
 ```
+
+`htdocs` is where XAMPP looks for PHP file.
 
 Give the `htdocs` folder the proper permissions:
-1. Click on `htdocs`
-- Select `File>Get Info` (Command + I)
-- At the bottom, click the little padlock and enter your password
-- Select "Read & Write" as the Privilege in each row
-- Click the little gear at the bottom and select "Apply to enclosed items..."
+
+```
+$ cd /Applications/XAMPP/xamppfiles
+$ chmod -R 777 htdocs
+```
 
 Now, create a new file called `hello.php`. Inside, write this:
 

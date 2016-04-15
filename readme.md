@@ -13,7 +13,9 @@ However, nothing like it really existed, so other people caught wind of what he 
 
 Thus, PHP evolved organically. And as a result, it's kind of a mess.
 
-PHP is very procedural. It doesn't really have objects. Instead of giving you an Array object that has methods attached to it, it just gives you 53 functions with "array" in the name. There are 9500 total built-in functions, all in the global namespace. - http://php.net/manual/en/function.array.php
+PHP is very procedural. It doesn't really have objects.* Instead of giving you an Array object that has methods attached to it, it just gives you 53 functions with "array" in the name. There are 9500 total built-in functions, all in the global namespace. - http://php.net/manual/en/function.array.php
+
+> *It does have objects now, actually. But instead of doing something like `artist.name` it's `$artist->name`, which is much less enjoyable to write.
 
 ### At the same time...
 

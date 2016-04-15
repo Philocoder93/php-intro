@@ -117,6 +117,13 @@ echo(quiznosToaster($sandwich));
 
 Then, go to `localhost/hello.php`.
 
+## Big differences between PHP and Javascript
+
+- To add strings together you use `.`, not `+`, but you still use `+` to add numbers.
+- There's no `var`. Instead, variables all begin with `$`. So instead of `var artist = ` you have `$artist =`.
+- PHP has classes. Instead of referencing a property or method with `.` (`artist.name`) you use `->` (`$artist->name`).
+- Every PHP snippet begins with `<?php` and ends with `?>`.
+
 # [FizzBuzz in PHP](https://github.com/ga-wdi-exercises/php-fizzbuzz)
 
 # [Phpone Book](https://github.com/ga-wdi-exercises/phpone_book)

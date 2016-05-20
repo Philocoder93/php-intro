@@ -105,6 +105,13 @@ $ cd htdocs
 
 Now, create a new file called `hello.php`. Inside, write this:
 
+![quiznos](file.quiznos.php.png)
+
+Then, go to `localhost/hello.php`.
+
+<details>
+  <summary> </summary>
+  <pre>
 ```PHP
 <?php
 
@@ -118,8 +125,8 @@ echo(quiznosToaster($sandwich));
 
 ?>
 ```
-
-Then, go to `localhost/hello.php`.
+  </pre>
+</details>
 
 ## Big differences between PHP and Javascript
 
@@ -130,6 +137,11 @@ Then, go to `localhost/hello.php`.
 
 ## Try this:
 
+![adjectives](file.adjectives.php.png)
+
+<details>
+  <summary> </summary>
+  <pre>
 ```PHP
 <!DOCTYPE html>
 <html>
@@ -148,6 +160,8 @@ Then, go to `localhost/hello.php`.
   </body>
 </html>
 ```
+  </pre>
+</details>
 
 # [FizzBuzz in PHP](https://github.com/ga-wdi-exercises/php-fizzbuzz)
 

@@ -15,7 +15,23 @@ Thus, PHP evolved organically. And as a result, it's kind of a mess.
 
 PHP is very procedural. It doesn't really have objects*. Instead of giving you an Array object that has methods attached to it, it just gives you 53 functions with "array" in the name. There are 9500 total built-in functions, all in the global namespace. - http://php.net/manual/en/function.array.php
 
+Compare the two snippets below. Both print out `apple and banana and carrot and durian`. Which is easier to read?
+
+```php
+<?php
+$fruits = "  APPLE,bAnAnA,CArroT,durian  ";
+echo(implode(" and ", explode(",", trim(strtolower($fruits)))));
+?>
+
+<script>
+var fruits = "  APPLE,bAnAnA,CArroT,durian  ";
+document.write(fruits.toLowerCase().trim().split(",").join(" and "));
+</script>
+```
+
 > It does have objects now, actually. But instead of doing something like `artist.name` it's `$artist->name`, which is much less enjoyable to write.
+
+![PHP Hadouken](hadouken.jpg)
 
 ### At the same time...
 

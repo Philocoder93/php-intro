@@ -165,10 +165,6 @@ echo(quiznosToaster($sandwich));
 
 # [FizzBuzz in PHP](https://github.com/ga-wdi-exercises/php-fizzbuzz)
 
-# [Phpone Book](https://github.com/ga-wdi-exercises/phpone_book)
-
-Deployed version: http://phponebook.herokuapp.com/
-
 ## Congrats! You now know how to:
 
 - Write functions

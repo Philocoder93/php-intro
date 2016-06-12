@@ -5,6 +5,14 @@
 - Start Apache running locally on your computer.
 - Write a PHP function that contains variables.
 
+## Before we begin
+
+Please start downloading XAMPP, since it's kind-of big:
+
+https://www.apachefriends.org/index.html
+
+**You only need to download it**. Don't open what you downloaded just yet.
+
 ## What is PHP, and why does everyone "hate" it?
 
 PHP originally stood for Personal Home Page... because it was created by some guy to use just on his personal home page. He had no intention of creating a programming language.
@@ -15,21 +23,23 @@ Thus, PHP evolved organically. And as a result, it's kind of a mess.
 
 PHP is very procedural. It doesn't really have objects*. Instead of giving you an Array object that has methods attached to it, it just gives you 53 functions with "array" in the name. There are 9500 total built-in functions, all in the global namespace. - http://php.net/manual/en/function.array.php
 
-Compare the two snippets below. Both print out `apple and banana and carrot and durian`. Which is easier to read?
+Compare the two snippets below. Both print out `apple and a banana and a carrot and a durian`. Which is easier to read?
 
 ```php
 <?php
 $fruits = "  APPLE,bAnAnA,CArroT,durian  ";
-echo(implode(" and ", explode(",", trim(strtolower($fruits)))));
+$fruits = implode(" and a ", explode(",", trim(strtolower($fruits))))
+echo($fruits);
 ?>
 
 <script>
 var fruits = "  APPLE,bAnAnA,CArroT,durian  ";
-document.write(fruits.toLowerCase().trim().split(",").join(" and "));
+fruits = fruits.trim().toLowerCase().split(",").join(" and a ");
+document.write(fruits);
 </script>
 ```
 
-> It does have objects now, actually. But instead of doing something like `artist.name` it's `$artist->name`, which is much less enjoyable to write.
+> It does have objects now, actually. But instead of doing something like `artist.name` it's `$artist->name`, which is 2 characters too many.
 
 ![PHP Hadouken](hadouken.jpg)
 
@@ -41,25 +51,9 @@ There are several reasons to like PHP:
 
 2. It's *everywhere*. It had a massive head start.
 
-3. It's easy to embed in HTML. PHP works just like `.html.erb` or `.hbs` files, and you don't need to do anything fancy for that to work.
+3. It's easy to embed in HTML.
 
-4. It makes a lot of back-end concepts easy to understand. Look at the `$_SERVER` variables:
-
-    ```PHP
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Hello</title>
-      </head>
-      <body>
-
-        <pre><?php print_r($GLOBALS); ?></pre>
-
-      </body>
-    </html>
-    ```
-
-Now we can easily see all of the information we're getting from the server, as well as all of the GET and POST parameters, cookies, etc.
+4. It makes a lot of back-end concepts easy to understand.
 
 ### I use PHP...
 
@@ -69,31 +63,33 @@ For example, my [PHP Computer Navigator](https://github.com/RobertAKARobin/PHP-C
 
 ![#](commitstrip.jpg)
 
-## Install PHP
+## Install PHP with XAMPP
 
-> Note: I personally don't use XAMPP to run Apache. I used to for years, but now I do it through the command line. We're not because the configuration varies from computer to computer.
+> Note: I personally don't use XAMPP to run Apache. I used to for years, but now I do it through the command line. We're not doing it via the CLI as a class because the configuration varies from computer to computer.
 
-Download XAMPP:
+XAMPP is basically like the Blue Elephant for Postgres, except it runs a server called Apache. (It can also do MySQL and some other stuff.)
 
-https://www.apachefriends.org/index.html
+### Before you open what you downloaded...
 
-This is basically like the Blue Elephant for Postgres, except for running the server for PHP, called Apache. (It can also do MySQL and some other stuff.)
+It's going to install some stuff. In the process, it'll try to get you to go to a site called BitNami. This is not necessary.
 
-Open it, and make sure Apache is running:
+You'll be done when you get this window:
+
+![XAMPP is installed](xampp_splash.jpg)
+
+### Now open it
+
+Open what you downloaded, and follow the steps to install it.
+
+When you've arrived at the window above, click the "Manage Servers" tab, and start Apache:
 
 ![Apache is running](xampp.png)
 
-## Your first PHP file
+### Set it up in the CLI
 
-Go to this directory:
+We're looking for a folder called `htdocs`, which is the **root directory for all PHP files** accessed via XAMPP.
 
-```
-$ cd /Applications/XAMPP/xamppfiles/htdocs
-```
-
-`htdocs` is where XAMPP looks for PHP file.
-
-Give the `htdocs` folder the proper permissions:
+**For Macs:**
 
 ```
 $ cd /Applications/XAMPP/xamppfiles
@@ -101,18 +97,30 @@ $ sudo chmod -R 777 htdocs
 $ cd htdocs
 ```
 
+**For Linux:**
+
+```
+$ cd /opt/lampp
+$ sudo chmod -R 777 htdocs
+$ cd htdocs
+```
+
 > Note: Don't go running `chmod` any old place. It's fine on `htdocs`, but I wouldn't do it elsewhere unless you know what you're doing.
 
-Now, create a new file called `hello.php`. Inside, write this:
+## Your first PHP file
+
+Now, in that `htdocs` folder, create a new file called `hello.php`. Inside, write this:
 
 ![quiznos](file.quiznos.php.png)
 
 Then, go to `localhost/hello.php`.
 
+> Note that PHP is **extremely** picky about semicolons. You *must* use them, unlike in Javascript.
+
 <details>
   <summary> </summary>
   <pre>
-```PHP
+```
 <?php
 
 function quiznosToaster($tray){
@@ -163,7 +171,7 @@ echo(quiznosToaster($sandwich));
   </pre>
 </details>
 
-# [FizzBuzz in PHP](https://github.com/ga-wdi-exercises/php-fizzbuzz)
+# You Do: [FizzBuzz in PHP](https://github.com/ga-wdi-exercises/php-fizzbuzz)
 
 ## Congrats! You now know how to:
 

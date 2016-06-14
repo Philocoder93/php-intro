@@ -28,7 +28,7 @@ Compare the two snippets below. Both print out `apple and a banana and a carrot 
 ```php
 <?php
 $fruits = "  APPLE,bAnAnA,CArroT,durian  ";
-$fruits = implode(" and a ", explode(",", trim(strtolower($fruits))))
+$fruits = implode(" and a ", explode(",", trim(strtolower($fruits))));
 echo($fruits);
 ?>
 

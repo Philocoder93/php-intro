@@ -47,13 +47,10 @@ document.write(fruits);
 
 There are several reasons to like PHP:
 
-1. It's super-easy to pick up. It looks a lot like Javascript, and because you're dealing with functions instead of objects, it's easier to read.
-
-2. It's *everywhere*. It had a massive head start.
-
-3. It's easy to embed in HTML.
-
-4. It makes a lot of back-end concepts easy to understand.
+- It's super-easy to pick up. It looks a lot like Javascript, and because you're dealing with functions instead of objects, it's easier to write, and usually not difficult to read.
+- It's *everywhere*. It had a massive head start.
+- It's easy to embed in HTML.
+- It makes a lot of back-end concepts easy to understand.
 
 ### I use PHP...
 
